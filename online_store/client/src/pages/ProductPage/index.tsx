@@ -37,7 +37,7 @@ const ProductPage: React.FC = () => {
               <div className={s.price}>{product.price}</div>
               <div>
                 <Button
-                  onClick={() => console.log("Купить сейчас")}
+                  onClick={() => console.log("Купить сейчас!!!")}
                   color={"success"}
                   margin={"0 10px 5px 0"}
                 >
