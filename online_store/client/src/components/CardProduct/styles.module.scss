@@ -1,0 +1,88 @@
+@import "src/styles/variables";
+$img_height: 180px;
+$img_height_mini: 100px;
+
+.cardProduct {
+  border-radius: $border_radius;
+  box-shadow: $boxShadow;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  max-width: 900px;
+  user-select: none;
+
+  .wrapperDescription {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    height: $img_height + 2px;
+    padding: 1px;
+    overflow: hidden;
+
+    .img {
+      height: $img_height;
+      width: $img_height;
+      margin-right: 20px;
+      box-shadow: $boxShadow;
+      border-radius: $border_radius;
+      overflow: hidden;
+    }
+
+    .description {
+      font-size: $font_size_h2;
+    }
+
+    @media (max-width: $max_width) {
+      .img {
+        height: $img_height_mini;
+        width: $img_height_mini;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  @media (max-width: $max_width) {
+    .wrapperDescription {
+      height: $img_height_mini + 2px;
+    }
+  }
+
+  .priceWrapper {
+    padding: 10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .price {
+      margin-bottom: 10px;
+      font-size: $font_size_h2;
+    }
+
+    .buttonWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: $max_width) {
+      .buttonWrapper {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+  }
+
+  @media (max-width: $max_width) {
+    .priceWrapper {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $max_width) {
+  .cardProduct {
+    display: block;
+  }
+}
+

@@ -1,0 +1,27 @@
+@import "src/styles/variables";
+
+.productPage {
+  padding: $padding;
+
+  .wrapperImgAndPrice {
+    display: flex;
+
+    .imagesCarousel {
+      height: 300px;
+      width: 300px;
+      border-radius: $border_radius;
+      box-shadow: $boxShadow;
+      margin-right: 20px;
+      margin-bottom: 30px;
+      //overflow: hidden;
+    }
+    .nameProduct {
+      font-size: $font_size_h2;
+      margin-bottom: 20px;
+    }
+    .price {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+}
