@@ -1,0 +1,10 @@
+//@import "src/components/Header/styles.module";
+@import "src/styles/variables";
+
+.content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+}

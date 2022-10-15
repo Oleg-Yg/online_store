@@ -1,0 +1,32 @@
+@import "src/styles/variables";
+$header_height: 50px;
+
+.wrapperHeader {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: $header_height;
+  box-shadow: $boxShadow;
+  z-index: 1;
+
+  .header {
+    position: relative;
+    width: $width;
+    display: flex;
+    align-items: center;
+    padding: 0 $padding;
+
+    .nameStore {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .groupButton {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: $padding;
+    }
+  }
+}
