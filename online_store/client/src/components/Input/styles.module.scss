@@ -1,0 +1,25 @@
+.wrapper {
+  padding: 18px 0 0 0;
+  margin-bottom: 20px;
+
+  .label {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .input {
+      padding: 8px 10px;
+      border: none;
+      position: absolute;
+      width: 100%;
+      outline: 0;
+    }
+
+    .placeholder {
+      position: relative;
+      left: 5px;
+      padding: 0 5px;
+      color: #999;
+    }
+  }
+}

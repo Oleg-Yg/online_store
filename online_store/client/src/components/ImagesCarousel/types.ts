@@ -2,7 +2,7 @@ import React from "react";
 
 export interface ImagesCarouselProps {
   images: string[];
-  className?: any;
+  className?: string;
   style?: React.CSSProperties;
   hidden?: boolean;
 }

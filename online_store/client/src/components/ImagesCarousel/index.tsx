@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ImgWithLoader from "../ImgWithLoader";
 import {
   HiChevronLeft as ArrowForward,

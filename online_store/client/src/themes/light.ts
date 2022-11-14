@@ -4,7 +4,7 @@ export const theme: ITheme = {
   title: "Light",
   colors: {
     primary: "#2359ea",
-    secondary: "#aa44ff",
+    secondary: "#000000",
     success: "#2f982f",
     warning: "#e87a2b",
     error: "#fc4c4c",

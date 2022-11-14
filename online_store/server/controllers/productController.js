@@ -40,8 +40,6 @@ class ProductController {
       const { img } = req.files;
       const images = [];
 
-      // console.log("directory-name 👉️", __dirname);
-
       if (Array.isArray(img)) {
         img.forEach((i) => {
           let fileName = uuid.v4() + ".jpg";
