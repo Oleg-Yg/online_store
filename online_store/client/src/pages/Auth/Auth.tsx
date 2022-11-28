@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useRef, useState } from "react";
 import Input from "../../components/Input";
 import useTheme from "../../hooks/useTheme";
 import { AuthProps, AuthTypes } from "./types";
@@ -23,10 +23,10 @@ const Auth: React.FC<AuthProps> = ({ setOpen }) => {
   const submit = async () => {
     if (authStatus === AuthTypes.AUTHORIZATION) {
       await login(email, password);
-      setOpen(false);
+      // setOpen(false);
     } else {
       await registration(email, password);
-      setOpen(false);
+      // setOpen(false);
     }
   };
 

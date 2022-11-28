@@ -16,8 +16,8 @@ const Header = () => {
   const [showButtonLogout, setShowButtonLogout] = useState(isAuth);
 
   const logoutHandler = async () => {
-    await logout();
     setShowButtonLogout(!showButtonLogout);
+    await logout();
   };
 
   return (
