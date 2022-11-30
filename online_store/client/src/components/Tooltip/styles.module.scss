@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+
+.tooltip {
+  height: 20px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 3px 12px 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  box-shadow: $boxShadow black;
+  opacity: 0.8;
+}
