@@ -4,7 +4,7 @@ import { ProductDataProps } from "./types";
 
 const Products: React.FC<ProductDataProps> = ({ data }) => {
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       {data.map((product, index) => (
         <CardProduct
           key={product.id}

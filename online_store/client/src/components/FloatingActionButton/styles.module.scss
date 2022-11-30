@@ -1,0 +1,13 @@
+.floatingActionButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  &:active {
+    opacity: 0.8;
+  }
+}
