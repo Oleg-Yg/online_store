@@ -1,0 +1,67 @@
+@import "src/styles/variables";
+
+.wrapperPictures {
+  display: flex;
+
+  .wrapperPicture {
+    position: relative;
+    box-shadow: $boxShadow black;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border_radius;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+
+    .labelButtonDelete {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      :hover {
+        cursor: pointer;
+        background: rgba(0,0,0,.5);
+      }
+
+      .loadedPicture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .iconDelete {
+        width: 100%;
+        height: 100%;
+        padding: 55px;
+        color: red;
+        position: absolute;
+        opacity: 0;
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+    }
+
+    .labelAddPicture {
+      width: 50px;
+      height: 50px;
+      :hover {
+        cursor: pointer;
+        color: white;
+        background: rgba(0,0,0,.5);
+      }
+
+      .iconAdd {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
