@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+.shop {
+  padding: 20px;
+  display: flex;
+
+  .tooltipAddButton {
+    position: fixed;
+    bottom: 75px;
+    right: 20vw - 3vw;
+  }
+
+  .addButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20vw;
+  }
+}
