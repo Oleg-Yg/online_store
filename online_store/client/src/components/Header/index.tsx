@@ -15,6 +15,10 @@ const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [showButtonLogout, setShowButtonLogout] = useState(isAuth);
 
+  const goToBasket = React.useCallback(() => {
+    console.log("Корзину");
+  }, []);
+
   const logoutHandler = async () => {
     setShowButtonLogout(!showButtonLogout);
     await logout();
@@ -30,7 +34,7 @@ const Header = () => {
           Online store
         </span>
         <div className={s.groupButton}>
-          <Button margin={"10px"} onClick={() => console.log("Ok")}>
+          <Button margin={"10px"} onClick={goToBasket}>
             Корзина
           </Button>
           {/*<Button variant={"outlined"} onClick={() => console.log("авторизация")}>*/}

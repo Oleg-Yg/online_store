@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import { PRODUCT_ROUTE } from "../../navigation/consts";
 import { getContrastColor } from "../../utils";
 import { BACKEND_URL } from "../../constants/global";
+import { BiRuble as Ruble } from "react-icons/bi";
 
 const CardProduct: React.FC<CardProductProps> = ({
   id,
@@ -17,6 +18,14 @@ const CardProduct: React.FC<CardProductProps> = ({
   info,
 }) => {
   const { theme } = useTheme();
+
+  const buyProduct = React.useCallback(() => {
+    console.log("Купить сейчас");
+  }, []);
+
+  const addToBasket = React.useCallback(() => {
+    console.log("В корзину");
+  }, []);
 
   return (
     <div
@@ -49,21 +58,19 @@ const CardProduct: React.FC<CardProductProps> = ({
           className={s.price}
           style={{ color: getContrastColor(theme.background.secondary) }}
         >
-          <span>Цена: </span>
+          <span style={{ marginRight: 5 }}>Цена:</span>
           <span>{price}</span>
+          <Ruble />
         </div>
         <div className={s.buttonWrapper}>
           <Button
-            onClick={() => console.log("Купить сейчас")}
+            onClick={buyProduct}
             color={"success"}
             margin={"0 10px 5px 0"}
           >
             Купить сейчас
           </Button>
-          <Button
-            onClick={() => console.log("В корзину")}
-            margin={"0 10px 5px 0"}
-          >
+          <Button onClick={addToBasket} margin={"0 10px 5px 0"}>
             В корзину
           </Button>
         </div>

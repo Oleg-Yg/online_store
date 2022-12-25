@@ -11,9 +11,18 @@ const Input: React.FC<InputProps> = ({
   color = "primary",
   variant = "standard",
   width = "100%",
+  margin,
 }) => {
   const { theme } = useTheme();
   const [focus, setFocus] = useState(false);
+
+  const onFocus = () => {
+    setFocus(true);
+  };
+
+  const unFocus = () => {
+    setFocus(false);
+  };
 
   return (
     <div
@@ -22,11 +31,12 @@ const Input: React.FC<InputProps> = ({
         width: width,
         background:
           variant === "filled" ? `${theme.background.primary}` : "none",
+        margin: margin,
       }}
     >
       <label
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
+        onFocus={onFocus}
+        onBlur={unFocus}
         className={s.label}
         style={{ width: width }}
       >
@@ -63,4 +73,4 @@ const Input: React.FC<InputProps> = ({
   );
 };
 
-export default Input;
+export default React.memo(Input);

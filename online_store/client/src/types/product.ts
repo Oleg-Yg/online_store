@@ -1,3 +1,5 @@
+import { Category } from "./category";
+
 export interface ProductState {
   products: Product[];
   loading: boolean;
@@ -10,7 +12,7 @@ export interface Product {
   price: number;
   createdAt: Date;
   categoryId: number;
-  category: any;
+  category: Category;
   img: string[];
   productInfo: ProductInfo[];
 }

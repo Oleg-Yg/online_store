@@ -8,4 +8,5 @@ export interface InputProps {
   color?: ColorVariants;
   variant?: "outlined" | "filled" | "standard";
   width?: string;
+  margin?: string;
 }

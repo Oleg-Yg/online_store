@@ -7,13 +7,13 @@ const ElementList: React.FC<ElementListProps> = ({ title, onClick }) => {
   const { theme } = useTheme();
   const [onHover, setOnHover] = useState(false);
 
-  const changeOnMouseOver = () => {
+  const changeOnMouseOver = React.useCallback(() => {
     setOnHover(true);
-  };
+  }, []);
 
-  const changeOnMouseOut = () => {
+  const changeOnMouseOut = React.useCallback(() => {
     setOnHover(false);
-  };
+  }, []);
 
   return (
     <div

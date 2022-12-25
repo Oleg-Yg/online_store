@@ -7,7 +7,7 @@ import FloatingActionButton from "../../components/FloatingActionButton";
 import useIsAdmin from "../../hooks/useIsAdmin";
 import Tooltip from "../../components/Tooltip";
 import Modal from "../../components/Modal";
-import AddProduct from "./AddProduct";
+import AddingProduct from "./AddingProduct";
 
 const Shop: React.FC = () => {
   const { products, error, loading } = useAppSelector((state) => state.product);
@@ -24,9 +24,9 @@ const Shop: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const changeModalOpen = () => {
+  const changeModalOpen = React.useCallback(() => {
     setModalOpen(true);
-  };
+  }, []);
 
   if (loading) {
     return <h1>Идет загрузка...</h1>;
@@ -50,7 +50,7 @@ const Shop: React.FC = () => {
       )}
 
       <Modal open={modalOpen} setOpen={setModalOpen} title={"Добавить товар"}>
-        <AddProduct />
+        <AddingProduct setModalOpen={setModalOpen} />
       </Modal>
     </div>
   );

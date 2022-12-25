@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import {
   BiChevronDown as Down,
   BiChevronUp as Up,
@@ -47,18 +47,21 @@ const DropdownAutocomplete: React.FC<DropdownAutocompleteProps> = ({
     setDropdownOpen(!dropdownOpen);
   };
 
-  const deleteValueInput = () => {
+  const deleteValueInput = React.useCallback(() => {
     setValueInput("");
-  };
+  }, []);
 
-  const changeValueInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setValueInput(event.target.value);
-  };
+  const changeValueInput = React.useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setValueInput(event.target.value);
+    },
+    []
+  );
 
-  const onClickElementList = (title: string) => {
+  const onClickElementList = React.useCallback((title: string) => {
     setValueInput(title);
     setDropdownOpen(false);
-  };
+  }, []);
 
   return (
     <div className={className} style={style}>
@@ -114,4 +117,4 @@ const DropdownAutocomplete: React.FC<DropdownAutocompleteProps> = ({
   );
 };
 
-export default DropdownAutocomplete;
+export default React.memo(DropdownAutocomplete);

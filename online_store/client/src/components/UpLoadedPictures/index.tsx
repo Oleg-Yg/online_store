@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import s from "./styles.module.scss";
 import { MdAddPhotoAlternate as Add, MdDelete as Delete } from "react-icons/md";
 import { UpLoadedPicturesProps } from "./types";
@@ -8,13 +8,16 @@ const UpLoadedPictures: React.FC<UpLoadedPicturesProps> = ({
   limit,
 }) => {
   const [upLoadedPictures, setUpLoadedPictures] = useState<string[]>([]);
+  const [pictures, setPictures] = useState<File[]>([]);
 
   useEffect(() => {
-    getUploadedImages(upLoadedPictures);
+    getUploadedImages(pictures);
   }, [upLoadedPictures]);
 
-  const download = (event: React.ChangeEvent) => {
+  const download = (event: any) => {
     if (upLoadedPictures.length === limit) return;
+    // event.preventDefault();
+    setPictures([...pictures, ...event.target.files]);
     const target = event.target as HTMLInputElement;
     const file: File = (target.files as FileList)[0];
     const reader = new FileReader();

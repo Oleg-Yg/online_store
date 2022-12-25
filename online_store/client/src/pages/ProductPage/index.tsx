@@ -10,6 +10,7 @@ import Tabs from "../../components/Tabs";
 import Tab from "../../components/Tabs/Tab";
 import { getArrayImgsFetch } from "../../utils";
 import { Product } from "../../types/product";
+import { BiRuble as Ruble } from "react-icons/bi";
 
 const ProductPage: React.FC = () => {
   const location = useLocation();
@@ -19,6 +20,14 @@ const ProductPage: React.FC = () => {
     axios.get(`${BACKEND_URL}api${location.pathname}`).then((response) => {
       setProduct(response.data);
     });
+  }, []);
+
+  const buyProduct = React.useCallback(() => {
+    console.log("Купить сейчас");
+  }, []);
+
+  const addToBasket = React.useCallback(() => {
+    console.log("В корзину");
   }, []);
 
   return (
@@ -34,19 +43,19 @@ const ProductPage: React.FC = () => {
             />{" "}
             <div>
               <div className={s.nameProduct}>{product.name}</div>
-              <div className={s.price}>{product.price}</div>
+              <div className={s.price}>
+                {product.price}
+                <Ruble size={30} />
+              </div>
               <div>
                 <Button
-                  onClick={() => console.log("Купить сейчас!!!")}
+                  onClick={buyProduct}
                   color={"success"}
                   margin={"0 10px 5px 0"}
                 >
                   Купить сейчас
                 </Button>
-                <Button
-                  onClick={() => console.log("В корзину")}
-                  margin={"0 10px 5px 0"}
-                >
+                <Button onClick={addToBasket} margin={"0 10px 5px 0"}>
                   В корзину
                 </Button>
               </div>

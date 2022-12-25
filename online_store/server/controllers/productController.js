@@ -67,7 +67,7 @@ class ProductController {
           prisma.productInfo.create({
             title: i.title,
             description: i.description,
-            productId: i.productId,
+            productId: product.id,
           })
         );
       }

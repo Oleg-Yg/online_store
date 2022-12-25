@@ -1,13 +1,14 @@
 import React from "react";
 import { FloatingActionButtonProps } from "./types";
 import { IoIosAdd as Add, IoMdCreate as Edit } from "react-icons/io";
+import { MdDelete as Delete } from "react-icons/md";
 import s from "./styles.module.scss";
 import useTheme from "../../hooks/useTheme";
 
 type Ref = HTMLButtonElement;
 
 const FloatingActionButton = React.forwardRef<Ref, FloatingActionButtonProps>(
-  ({ variant, onClick, style, className }, ref) => {
+  ({ variant, onClick, style, className, size }, ref) => {
     const { theme } = useTheme();
 
     return (
@@ -17,17 +18,21 @@ const FloatingActionButton = React.forwardRef<Ref, FloatingActionButtonProps>(
           ref={ref}
           onClick={onClick}
           style={{
-            background: theme.colors.primary,
+            background:
+              variant === "delete" ? theme.colors.error : theme.colors.primary,
             color: theme.background.secondary,
             boxShadow: `0 0 3px ${theme.colors.primary}`,
+            width: size,
+            height: size,
           }}
         >
           {variant === "add" && <Add size={32} />}
           {variant === "edit" && <Edit size={22} />}
+          {variant === "delete" && <Delete size={22} />}
         </button>
       </label>
     );
   }
 );
 
-export default FloatingActionButton;
+export default React.memo(FloatingActionButton);

@@ -1,4 +1,4 @@
 export interface UpLoadedPicturesProps {
-  getUploadedImages: (array: string[]) => void;
+  getUploadedImages: (array: File[]) => void;
   limit?: number;
 }

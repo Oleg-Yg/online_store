@@ -12,13 +12,19 @@ const Auth: React.FC<AuthProps> = ({ setOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const changeEmail = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  };
+  const changeEmail = React.useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setEmail(event.target.value);
+    },
+    []
+  );
 
-  const changePassword = (event: ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
-  };
+  const changePassword = React.useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setPassword(event.target.value);
+    },
+    []
+  );
 
   const submit = async () => {
     if (authStatus === AuthTypes.AUTHORIZATION) {
@@ -30,11 +36,11 @@ const Auth: React.FC<AuthProps> = ({ setOpen }) => {
     }
   };
 
-  const reset = () => {
+  const reset = React.useCallback(() => {
     setEmail("");
     setPassword("");
     setOpen(false);
-  };
+  }, []);
 
   return (
     <div className={s.auth}>
